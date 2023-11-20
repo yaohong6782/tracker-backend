@@ -3,7 +3,23 @@ info:
   version: 1.0.0
   title: Tracking API
   description: Track my note
-
+#
+servers:
+  - url: '{protocol}://localhost:{port}/api'
+    variables:
+      protocol:
+        enum:
+          - http
+          - https
+        default: http
+      port:
+        enum:
+          - '8081'
+          - '8083'
+        default: '8081'
+    description: Development server
+security:
+  - jwt: []
 tags:
   - name: "Users"
     description: "Operations related to users"

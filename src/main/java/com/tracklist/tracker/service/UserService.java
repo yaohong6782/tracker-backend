@@ -50,10 +50,10 @@ public class UserService {
 
         Users user = userMapper.mapUserSignUpDTOTOUsersEntity(userSignUpDTO);
         Users savedUser = usersRepository.save(user);
-        var jwtToken = jwtService.generateToken(user);
+//        var jwtToken = jwtService.generateToken(user);
         log.info("saved user : {} " , savedUser);
 
-        log.info("jwt token : {} ", jwtToken);
+//        log.info("jwt token : {} ", jwtToken);
 
         UserSignUpDTO userDTO = userMapper.mapUsersEntityToUserSignUpDTO(user);
         return userDTO;
