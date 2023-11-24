@@ -117,4 +117,21 @@ public class PostsService {
 
         return allPostsContents;
     }
+
+    public List<RetrieveAllPostsContentInner> getAllPostsRespectiveToUser(String username) {
+        log.info("Get all post respective to user function called");
+        List<RetrieveAllPostsContentInner> allPostscontents =  new ArrayList<>();
+        List<Posts> postsList = postsRepository.findAllPostsRespectiveToUser(username);
+        List<PostsDTO> postsDTOList = postsList
+                .stream()
+                .map(postsMapper::postsToPostsDTO)
+                .collect(Collectors.toList());
+
+        allPostscontents = postsDTOList
+                .stream()
+                .map(postsMapper::mapToRetrieveAllPostsContent)
+                .collect(Collectors.toList());
+
+        return allPostscontents;
+    }
 }

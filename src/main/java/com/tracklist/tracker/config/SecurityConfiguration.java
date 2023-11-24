@@ -58,6 +58,7 @@ public class SecurityConfiguration {
                         .requestMatchers(HttpMethod.POST, "/users/userLogin").permitAll()
                         .requestMatchers(HttpMethod.GET, "/posts/postContent").authenticated()
                         .requestMatchers(HttpMethod.GET, "/posts/getAllPostsContent").authenticated()
+                        .requestMatchers(HttpMethod.POST, "/posts/getAllPostsRespectiveToUser").authenticated()
                         .anyRequest().authenticated()
                 ).httpBasic(Customizer.withDefaults());
 

@@ -154,6 +154,37 @@ paths:
               example:
                 error: "Internal Server Error"
                 message: "An unexpected error occurred"
+  /posts/getAllPostsRespectiveToUser:
+    post:
+      tags:
+        - "Posts"
+      operationId: getPostsByUser
+      summary: Retrieve all posts belonging to user
+      description : Retrieve an array of posts that the user logged in has posted
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+              required:
+                - username
+      responses:
+        '200':
+          description: Successfully retrieve all posts
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RetrieveAllPostsContent'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              example:
+                error: "Internal Server Error"
+                message: "An unexpected error occurred"
 components:
   schemas:
     UserSignUpDTO:
