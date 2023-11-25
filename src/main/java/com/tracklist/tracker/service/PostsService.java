@@ -3,6 +3,7 @@ package com.tracklist.tracker.service;
 import com.tracklist.tracker.dto.PostContentDTO;
 import com.tracklist.tracker.dto.PostsDTO;
 import com.tracklist.tracker.dto.RetrieveAllPostsContentInner;
+import com.tracklist.tracker.dto.UsersDTO;
 import com.tracklist.tracker.entity.Posts;
 import com.tracklist.tracker.entity.Users;
 import com.tracklist.tracker.mapper.PostsMapper;
@@ -14,6 +15,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -47,10 +49,18 @@ public class PostsService {
         post.setQuestionTitle(postContentDTO.getQuestionTitle());
         post.setQuestionNumber(postContentDTO.getQuestionNumber());
         post.setContent(postContentDTO.getContent());
+        post.setQuestionUrl(postContentDTO.getQuestionUrl());
+
+
+        UsersDTO usersDTO = userService.getUserDetailsFromUsername(postContentDTO.getUserId());
+
+        Long usersUniqueId = usersDTO.getId();
 
         // Set only the user ID in the Posts entity
         Users user = new Users();
-        user.setId(postContentDTO.getUserId());
+
+        user.setId(usersUniqueId);
+        user.setUsername(postContentDTO.getUserId());
 
         log.info("user : {} ", user.toString());
         post.setUsers(user);

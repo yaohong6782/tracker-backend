@@ -15,7 +15,6 @@ servers:
       port:
         enum:
           - '8081'
-          - '8083'
         default: '8081'
     description: Development server
 security:
@@ -236,11 +235,13 @@ components:
           type: string
         questionNumber:
           type: integer
+        questionUrl:
+          type: string
         content:
           type: string
         userId:
-          type: integer
-          format: int64
+          type: string
+#          format: int64
 #          $ref: '#/components/schemas/UserSignUpDTO'
     RetrieveAllPostsContent:
       type: array

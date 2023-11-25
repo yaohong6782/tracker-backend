@@ -15,9 +15,12 @@ public class Posts {
 
     @Column(nullable = false)
     private Integer questionNumber;
+
+    @Column(nullable = false)
+    private String questionUrl;
+
     @Column(nullable = false)
     private String content;
-
     @ManyToOne
     @JoinColumn(name = "user_id")
     private Users users;
@@ -46,6 +49,14 @@ public class Posts {
         this.questionNumber = questionNumber;
     }
 
+    public String getQuestionUrl() {
+        return questionUrl;
+    }
+
+    public void setQuestionUrl(String questionUrl) {
+        this.questionUrl = questionUrl;
+    }
+
     public String getContent() {
         return content;
     }
@@ -67,9 +78,10 @@ public class Posts {
         return "Posts{" +
                 "id=" + id +
                 ", questionTitle='" + questionTitle + '\'' +
-                ", questionNumber='" + questionNumber + '\'' +
+                ", questionNumber=" + questionNumber +
+                ", questionUrl='" + questionUrl + '\'' +
                 ", content='" + content + '\'' +
-                ", user=" + users+
+                ", users=" + users +
                 '}';
     }
 }

@@ -85,10 +85,6 @@ public class UserService {
         return Optional.of(usersDTO);
     }
 
-//    public UserLoginResponse authenticate(UserLoginDTO userLoginDTO) {
-//
-//    }
-
     public UserLoginResponse userLogin(UserLoginDTO userLoginDTO) {
         log.info("user logging in service values :");
         log.info("username : {} , password : {} ", userLoginDTO.getUsername(), userLoginDTO.getPassword());
@@ -111,4 +107,14 @@ public class UserService {
         userLoginResponse.setAccessToken(jwtToken);
         return userLoginResponse;
     }
+
+    public UsersDTO getUserDetailsFromUsername(String username) {
+        log.info("Getting user details from username : {} " , username);
+
+        Users user = usersRepository.getUserDetailsFromUsername(username)
+                .orElseThrow();
+
+        return userMapper.usersToUsersDTO(user);
+    }
+
 }
