@@ -4,10 +4,10 @@ Backend application to note and view detailed tracking of stuffs
 
 ## Frontend 
 -- React, Shadcn component library 
+[Frontend Repo] https://github.com/yaohong6782/lctracker-frontend
 
 ## Backend
 -- Java, Springboot, Postgresql 
-[Frontend Repo] https://github.com/yaohong6782/lctracker-frontend
 
 ### API 
  ##### Written and Generated with OpenAPI Maven
