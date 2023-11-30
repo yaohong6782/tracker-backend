@@ -1,6 +1,6 @@
-# Tracking of Stuffs - BackEnd
+# Tracking of Stuff - BackEnd
 
-Backend application to note and view detailed tracking of stuffs
+Backend application to note and view detailed tracking of stuff
 
 ## Frontend 
 -- React, Shadcn component library 
