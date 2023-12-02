@@ -21,4 +21,9 @@ https://raw.githubusercontent.com/yaohong6782/tracker-backend/main/src/main/reso
 1. Clone this repository
 2. mvn clean compile / mvn install  --> **To download dependencies**
 3. mvn sprng-boot:run --> **To run**
-4. Use any api testing tools (e.g Postman API ) to test out the endpoints and have fun using this as your starter to understand 
+4. Use any api testing tools (e.g Postman API ) to test out the endpoints and have fun using this as your starter to understand
+
+### Additional notes 
+Needing a different or wanting to add more apis
+1. Edit api.yml file and mvn clean 
+2. Create your Controller and implement that API function being generated
