@@ -25,12 +25,11 @@ public class PostsService {
 
     private PostsRepository postsRepository;
 
-
     private PostsMapper postsMapper;
 
     private UserMapper userMapper;
-    private UserService userService;
 
+    private UserService userService;
 
     public PostsService( PostsRepository postsRepository, PostsMapper postsMapper, UserMapper userMapper, UserService userService) {
         this.postsRepository = postsRepository;
@@ -72,29 +71,6 @@ public class PostsService {
 
         return savedPostContentDTO;
     }
-
-//    public PostContentDTO createPost(PostContentDTO postContentDTO){
-//        log.info("Create post function called");
-//
-//        log.info("post content dto : {} : " , postContentDTO.toString());
-//        log.info("Post content DTO values : {}, {} , {} , {} ", postContentDTO.getUserId());
-//
-//        Posts post = new Posts();
-//        post.setQuestionTitle(postContentDTO.getQuestionTitle());
-//        post.setQuestionNumber(postContentDTO.getQuestionNumber());
-//        post.setContent(postContentDTO.getContent());
-//        UsersDTO usersDTO = userSignUpService.findById(postContentDTO.getUserId());
-//        log.info("users dto username find by id : {} ", usersDTO.getUsername());
-//
-//        Users user = userMapper.mapUsersDTOToUsersEntity(usersDTO);
-//        log.info("user : {} " , user.toString());
-//        post.setUsers(user);
-//        Posts savedPost = postsRepository.save(post);
-//        log.info("Saved post dto values : {} " , savedPost.toString());
-//        PostContentDTO savedPostContentDTO = postsMapper.postsEntityToPostsDTO(savedPost);
-//
-//        return savedPostContentDTO;
-//    }
 
     public List<RetrieveAllPostsContentInner> getAllPosts() {
         log.info("get all post function called");

@@ -9,8 +9,8 @@ public class PostsDTO {
     private Long id;
     private String questionTitle;
     private Integer questionNumber;
+    private String questionUrl;
     private String content;
-
     private UsersDTO usersDTO;
 
     public Long getId() {
@@ -45,7 +45,15 @@ public class PostsDTO {
         this.content = content;
     }
 
-//    public Long getUsers() {
+    public String getQuestionUrl() {
+        return questionUrl;
+    }
+
+    public void setQuestionUrl(String questionUrl) {
+        this.questionUrl = questionUrl;
+    }
+
+    //    public Long getUsers() {
 //        return users;
 //    }
 //
@@ -68,6 +76,7 @@ public class PostsDTO {
                 "id=" + id +
                 ", questionTitle='" + questionTitle + '\'' +
                 ", questionNumber=" + questionNumber +
+                ", questionUrl='" + questionUrl + '\'' +
                 ", content='" + content + '\'' +
                 ", usersDTO=" + usersDTO +
                 '}';

@@ -7,7 +7,7 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
-public interface PostsRepository extends JpaRepository<Posts, Long> {
+public interface PostsRepository extends JpaRepository<Posts, Long>{
 
     @Query("SELECT p FROM Posts p JOIN FETCH p.users")
     List<Posts> findAllWithUsers();

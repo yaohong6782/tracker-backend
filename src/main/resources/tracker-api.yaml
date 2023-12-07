@@ -258,6 +258,9 @@ components:
           questionNumber:
             type: integer
             example: 42
+          questionUrl:
+            type: string
+            example : www.google.com
           content:
             type: string
             example: "This is the content of the post."
