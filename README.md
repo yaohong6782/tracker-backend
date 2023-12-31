@@ -21,7 +21,7 @@ https://raw.githubusercontent.com/yaohong6782/tracker-backend/main/src/main/reso
 # How to use
 1. Clone this repository
 2. mvn clean compile / mvn install  --> **To download dependencies**
-3. mvn sprng-boot:run --> **To run**
+3. mvn spring-boot:run --> **To run**
 4. Use any api testing tools (e.g Postman API ) to test out the endpoints and have fun using this as your starter to understand
 5. Authentication is implemented so to test API calls, call userLogin endpoint and get the JWT token before proceeding to test out the other APIs
 
